@@ -19,8 +19,8 @@ bul.power1 = 30;
 bul.power2 = 60;
 bul.power3 = 70;
 bul.power4 = 40;
-bul.health = 250;
-bul.health1 = 250;
+bul.health = 220;
+bul.health1 = 220;
 struct pokemon charc;
 charc.power1 = 40;
 charc.power2 = 70;
@@ -47,15 +47,15 @@ ta.power1 = 30;
 ta.power2 = 60;
 ta.power3 = 70;
 ta.power4 = 40;
-ta.health = 250;
-ta.health1 = 250;
+ta.health = 220;
+ta.health1 = 220;
 struct pokemon ek;
 ek.power1 = 30;
 ek.power2 = 60;
 ek.power3 = 70;
 ek.power4 = 40;
-ek.health = 250;
-ek.health1 = 250;
+ek.health = 220;
+ek.health1 = 220;
 while( ok == 'n'){
 printf("========================================================\n");
 printf("||              Choose your pokemon                   ||\n");
@@ -1184,6 +1184,7 @@ else{
 }
 
 }
+//////////////////////////////////////////////////////////End charchar
 ////////////////////////Squirtle//////////////////////////////////////////////////////////////
 if(pokemonchoos == 3 && oppo == 6){
 printf("You choose : Squirtle \n");
@@ -1742,6 +1743,1124 @@ else{
 
 }
 ////////////////////////////////Endsquirtle
+////////////////////////////////Start Beautilfly//////////////////
+if(pokemonchoos == 4 && oppo == 6){
+printf("You choose : Beautilfly \n");
+beautifly_pokemon();
+printf("==========================================================\n");
+printf("||                 (Beautilfly vs Ekans)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppekans_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: beautilfly = %d || ekans = %d ||\n",be.health,ek.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",ek.health, be.power1);
+ ek.health = ek.health - be.power1;
+ printf("EKans attack with Warp Gas \n");
+ printf("::::::: %d - %d \n",be.health,ek.power4);
+ be.health -= ek.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter\n");
+ printf("////// %d - %d \n",ek.health,be.power2);
+ ek.health = ek.health - be.power2;
+
+ printf("EKans attack with Acid glare \n");
+ printf("::::::: %d - %d \n",be.health,ek.power1);
+ be.health -= ek.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind\n");
+ printf("////// %d - %d \n",ek.health,be.power3);
+ ek.health = ek.health - be.power3;
+
+ printf("EKans attack with Poison Stings \n");
+ printf("::::::: %d - %d \n",be.health,ek.power3);
+ be.health -= ek.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirlwind \n");
+ printf("////// %d - %d \n",ek.health,be.power4);
+ ek.health = ek.health - be.power4;
+
+ printf("EKans attack with Slam leer \n");
+ printf("::::::: %d - %d \n",be.health,ek.power2);
+ be.health -= ek.power2;
+}
+if(ek.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ek.health < be.health){
+  printf("===========================\n");
+  printf("||  Winner is Beautilfly ||\n");
+  printf("===========================\n");
+}
+else {
+printf("===========================\n");
+printf("||    Winner is Ekans    ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+if(pokemonchoos == 4 && oppo == 5){
+printf("You choose : beautilfly \n");
+beautifly_pokemon();
+printf("==========================================================\n");
+printf("||               (Beautilfly vs Talonflame)             ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+opptalonflame_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly = %d || Talonflame = %d ||\n",be.health,ta.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",ta.health,be.power1);
+ ta.health -= be.power1;
+ printf("talonflame attack with Steel Wings \n");
+ printf("::::::: %d - %d \n",be.health,ta.power4);
+ be.health -= ta.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter \n");
+ printf("////// %d - %d \n",ta.health,be.power2);
+ ta.health -=  be.power2;
+
+ printf("talonflame attack with Razor Wind \n");
+ printf("::::::: %d - %d \n",be.health,ta.power1);
+ be.health -= ta.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Sliver Wind \n");
+ printf("////// %d - %d \n",ta.health,be.power3);
+ ta.health -= be.power3;
+
+ printf("talonflame attack with TailWind \n");
+ printf("::::::: %d - %d \n",be.health,ta.power3);
+ be.health -= ta.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirl Wind \n");
+ printf("////// %d - %d \n",ta.health,be.power4);
+ ta.health -= be.power4;
+
+ printf("talonflame attack with Flame Charge \n");
+ printf("::::::: %d - %d \n",be.health,ta.power2);
+ be.health -= ta.power2;
+}
+if(ta.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ta.health < be.health){
+  printf("===========================\n");
+  printf("||  Winner is Beautilfly ||\n");
+  printf("===========================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Talonflame ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+if(pokemonchoos == 4 && oppo == 4){
+printf("You choose : Beautilfly \n");
+beautifly_pokemon();
+printf("==========================================================\n");
+printf("||                 (Beautilfly vs Beautilfly)           ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbeautifly_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly(you) = %d || Beautilfly = %d ||\n",be.health,be.health1);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Water Gun \n");
+ printf("////// %d - %d \n",be.health1,be.power1);
+ be.health1 -= be.power1;
+ printf("Beautilfly attack with Whirlwind \n");
+ printf("::::::: %d - %d \n",be.health,be.power4);
+ be.health -= be.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air Cutter \n");
+ printf("////// %d - %d \n",be.health1,be.power2);
+ be.health1 -=  be.power2;
+
+ printf("Beautilfly attack with Morning Sun \n");
+ printf("::::::: %d - %d \n",be.health,be.power1);
+ be.health -= be.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind \n");
+ printf("////// %d - %d \n",be.health1,be.power3);
+ be.health1 -= be.power3;
+
+ printf("Beautilfly attack with Silver wind \n");
+ printf("::::::: %d - %d \n",be.health,be.power3);
+ be.health -= be.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirlwind \n");
+ printf("////// %d - %d \n",be.health1,be.power4);
+ be.health1 -= be.power4;
+
+ printf("Beautilfly attack with Air cutter \n");
+ printf("::::::: %d - %d \n",be.health,be.power2);
+ be.health -= be.power2;
+}
+if(be.health1 <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (be.health1 < be.health){
+  printf("==================================\n");
+  printf("||  Winner is Beautilfly(you)   ||\n");
+  printf("==================================\n");
+}
+else {
+printf("====================================\n");
+printf("||  Winner is Beautilfly(Not you) ||\n");
+printf("====================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////////////
+/////////////////////////////////////////////////////////////////
+if(pokemonchoos == 4 && oppo == 3){
+printf("You choose : Beautilfly \n");
+beautifly_pokemon();
+printf("==========================================================\n");
+printf("||               (Beautilfly vs Squirtle)               ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppSquirtle();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly = %d || Squirtle = %d ||\n",be.health,sq.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",sq.health,be.power1);
+ sq.health -= be.power1;
+ printf("Squirtle attack with Water blade \n");
+ printf("::::::: %d - %d \n",be.health,sq.power4);
+ be.health -= sq.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter \n");
+ printf("////// %d - %d \n",sq.health,be.power2);
+ sq.health -=  be.power2;
+
+ printf("Squirtle attack with Water Gun \n");
+ printf("::::::: %d - %d \n",be.health,sq.power1);
+ be.health -= sq.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind \n");
+ printf("////// %d - %d \n",sq.health,be.power3);
+ sq.health -= be.power3;
+
+ printf("Squirtle attack with Bubble gun \n");
+ printf("::::::: %d - %d \n",be.health,sq.power3);
+ be.health -= sq.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirl wind\n");
+ printf("////// %d - %d \n",sq.health1,be.power4);
+ sq.health -= be.power4;
+
+ printf("Squirtle attack with Tail whip \n");
+ printf("::::::: %d - %d \n",be.health,sq.power2);
+ be.health -= sq.power2;
+}
+if(sq.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (sq.health < be.health){
+  printf("================================\n");
+  printf("||     Winner is Beautilfly   ||\n");
+  printf("================================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Squirtle   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////////////////////
+if(pokemonchoos == 4 && oppo == 1){
+printf("You choose : Beautilfly \n");
+beautifly_pokemon();
+printf("==========================================================\n");
+printf("||               (Beautilfly vs Bulbasaur)              ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbulbasaur_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly = %d || Bulbasur = %d ||\n",be.health,bul.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",bul.health,be.power1);
+ bul.health -= be.power1;
+ printf("Bulbasur attack with Sharp Vine \n");
+ printf("::::::: %d - %d \n",be.health,bul.power4);
+ be.health -= bul.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter \n");
+ printf("////// %d - %d \n",bul.health,be.power2);
+ bul.health -=  be.power2;
+
+ printf("Bulbasur attack with Grass Blade \n");
+ printf("::::::: %d - %d \n",be.health,bul.power1);
+ be.health -= bul.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind \n");
+ printf("////// %d - %d \n",bul.health,be.power3);
+ bul.health -= be.power3;
+
+ printf("Bulbasur attack with Blow \n");
+ printf("::::::: %d - %d \n",be.health,bul.power3);
+ be.health -= bul.power3;
+}
+if(ga == 4){
+
+ printf("You attack with WhirlWind \n");
+ printf("////// %d - %d \n",bul.health,be.power4);
+ bul.health -= be.power4;
+
+ printf("Bulbasur attack with Leaf Attack \n");
+ printf("::::::: %d - %d \n",be.health,bul.power2);
+ be.health -= bul.power2;
+}
+if(bul.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (bul.health < be.health){
+  printf("==================================\n");
+  printf("||     Winner is Beautilfly     ||\n");
+  printf("==================================\n");
+}
+else {
+printf("======================================\n");
+printf("||        Winner is Bulbasaur       ||\n");
+printf("======================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye then \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////
+if(pokemonchoos == 4 && oppo == 2){
+printf("You choose : Beautilfly \n");
+beautifly_pokemon();
+printf("============================================================\n");
+printf("||                 (Beautilfly vs Charchar)               ||\n");
+printf("============================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppcharchar_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Morning Sun               2 :: Air Cutter      ||\n");
+printf("|| 3 :: Silver Wind               4 :: Whirlwind       ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly = %d || Charchar = %d ||\n",be.health,charc.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",charc.health,be.power1);
+ charc.health -= be.power1;
+ printf("Charchar attack with Dragon Roar \n");
+ printf("::::::: %d - %d \n",be.health,charc.power4);
+ be.health -= charc.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter \n");
+ printf("////// %d - %d \n",charc.health,be.power2);
+ charc.health-=  be.power2;
+
+ printf("Charchar attack with Wings Attack \n");
+ printf("::::::: %d - %d \n",be.health,charc.power1);
+ be.health -= charc.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind \n");
+ printf("////// %d - %d \n",charc.health,be.power3);
+ charc.health -= be.power3;
+
+ printf("Charchar attack with Overhead Fire \n");
+ printf("::::::: %d - %d \n",be.health,charc.power3);
+ be.health -= charc.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirl Wind \n");
+ printf("////// %d - %d \n",charc.health,be.power4);
+ charc.health -= be.power4;
+
+ printf("Charchar attack with Fire Blast \n");
+ printf("::::::: %d - %d \n",be.health,charc.power2);
+ be.health -= charc.power2;
+}
+if(charc.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (charc.health < be.health){
+  printf("===============================\n");
+  printf("||  Winner is Beautilfly     ||\n");
+  printf("===============================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Charchar   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////End Beautilfly///////////////////
+/////////////////////////start TalonFlam//////////////////
+if(pokemonchoos == 5 && oppo == 6){
+printf("You choose : Talonflame \n");
+talonflame_pokemon();
+printf("==========================================================\n");
+printf("||                (Talonflame vs Ekans)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppekans_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Tailorflame = %d || ekans = %d ||\n",ta.health,ek.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with razor wind \n");
+ printf("////// %d - %d \n",ek.health, ta.power1);
+ ek.health -= ta.power1;
+
+ printf("EKans attack with Warp Gas \n");
+ printf("::::::: %d - %d \n",ta.health,ek.power4);
+ ta.health -= ek.power4;
+}
+if(ga == 2){
+
+ printf("You attack with flame Charger\n");
+ printf("////// %d - %d \n",ek.health,ta.power2);
+ ek.health -= ta.power2;
+
+ printf("EKans attack with Acid glare \n");
+ printf("::::::: %d - %d \n",ta.health,ek.power1);
+ ta.health -= ek.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Tail wind\n");
+ printf("////// %d - %d \n",ek.health,ta.power3);
+ ek.health -= ta.power3;
+
+ printf("EKans attack with Poison Stings \n");
+ printf("::::::: %d - %d \n",ta.health,ek.power3);
+ ta.health -= ek.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Steel Wings \n");
+ printf("////// %d - %d \n",ek.health,ta.power4);
+ ek.health -= ta.power4;
+
+ printf("EKans attack with Slam leer \n");
+ printf("::::::: %d - %d \n",ta.health,ek.power2);
+ ta.health -= ek.power2;
+}
+if(ek.health <= 0 || ta.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ek.health < ta.health){
+  printf("===========================\n");
+  printf("|| Winner is Tailor Wind ||\n");
+  printf("===========================\n");
+}
+else {
+printf("===========================\n");
+printf("||    Winner is Ekans    ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+if(pokemonchoos == 5 && oppo == 5){
+printf("You choose : Tailorflame \n");
+talonflame_pokemon();
+printf("======================================================\n");
+printf("||           (Tailorflame(You) vs Talonflame        ||\n");
+printf("======================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+opptalonflame_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: talonFlame(You) = %d || Talonflame = %d ||\n",ta.health,ta.health1);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",ta.health1,ta.power1);
+ ta.health1 -= ta.power1;
+ printf("talonflame attack with Steel Wings \n");
+ printf("::::::: %d - %d \n",ta.health,ta.power4);
+ ta.health -= ta.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Flame Charge \n");
+ printf("////// %d - %d \n",ta.health1,ta.power2);
+ ta.health1 -=  ta.power2;
+
+ printf("talonflame attack with Razor Wind \n");
+ printf("::::::: %d - %d \n",ta.health,ta.power1);
+ ta.health -= ta.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Tail Wind \n");
+ printf("////// %d - %d \n",ta.health1,ta.power3);
+ ta.health1 -= ta.power3;
+
+ printf("talonflame attack with TailWind \n");
+ printf("::::::: %d - %d \n",ta.health,ta.power3);
+ ta.health -= ta.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Steel Wings \n");
+ printf("////// %d - %d \n",ta.health1,ta.power4);
+ ta.health1 -= ta.power4;
+
+ printf("talonflame attack with Flame Charge \n");
+ printf("::::::: %d - %d \n",ta.health,ta.power2);
+ ta.health -= ta.power2;
+}
+if(ta.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ta.health1 < ta.health){
+  printf("================================\n");
+  printf("||  Winner is TalonFlame(you) ||\n");
+  printf("================================\n");
+}
+else {
+printf("====================================\n");
+printf("||  Winner is Talonflame(not you) ||\n");
+printf("====================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 4){
+printf("You choose : TalonFlame \n");
+talonflame_pokemon();
+printf("==========================================================\n");
+printf("||                 (Talonflame vs Beautilfly)           ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbeautifly_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: talonflame = %d || Beautilfly = %d ||\n",ta.health,be.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",be.health,ta.power1);
+ be.health -= ta.power1;
+ printf("Beautilfly attack with Whirlwind \n");
+ printf("::::::: %d - %d \n",ta.health,be.power4);
+ ta.health -= be.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Flame Charge \n");
+ printf("////// %d - %d \n",be.health,ta.power2);
+ be.health -=  ta.power2;
+
+ printf("Beautilfly attack with Morning Sun \n");
+ printf("::::::: %d - %d \n",ta.health,be.power1);
+ ta.health -= be.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Tail Wind \n");
+ printf("////// %d - %d \n",be.health,ta.power3);
+ be.health -= ta.power3;
+
+ printf("Beautilfly attack with Silver wind \n");
+ printf("::::::: %d - %d \n",ta.health,be.power3);
+ ta.health -= be.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Steel Wings \n");
+ printf("////// %d - %d \n",be.health,ta.power4);
+ be.health -= ta.power4;
+
+ printf("Beautilfly attack with Air cutter \n");
+ printf("::::::: %d - %d \n",ta.health,be.power2);
+ ta.health -= be.power2;
+}
+if(be.health <= 0 || ta.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (be.health < ta.health){
+  printf("=============================\n");
+  printf("||  Winner is TalonFlame   ||\n");
+  printf("=============================\n");
+}
+else {
+printf("====================================\n");
+printf("||  Winner is Beautilfly(Not you) ||\n");
+printf("====================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////////////
+/////////////////////////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 3){
+printf("You choose : Talonflame \n");
+talonflame_pokemon();
+printf("==========================================================\n");
+printf("||               (TalonFlame vs Squirtle)               ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppSquirtle();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: TalorFlame = %d || Squirtle = %d ||\n",ta.health,sq.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",sq.health,ta.power1);
+ sq.health -= ta.power1;
+ printf("Squirtle attack with Water blade \n");
+ printf("::::::: %d - %d \n",ta.health,sq.power4);
+ ta.health -= sq.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Flame Charge \n");
+ printf("////// %d - %d \n",sq.health,ta.power2);
+ sq.health -=  ta.power2;
+
+ printf("Squirtle attack with Water Gun \n");
+ printf("::::::: %d - %d \n",ta.health,sq.power1);
+ ta.health -= sq.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Tail Wind \n");
+ printf("////// %d - %d \n",sq.health,ta.power3);
+ sq.health -= ta.power3;
+
+ printf("Squirtle attack with Bubble gun \n");
+ printf("::::::: %d - %d \n",ta.health,sq.power3);
+ ta.health -= sq.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Steel Wings \n");
+ printf("////// %d - %d \n",sq.health1,ta.power4);
+ sq.health -= ta.power4;
+
+ printf("Squirtle attack with Tail whip \n");
+ printf("::::::: %d - %d \n",ta.health,sq.power2);
+ ta.health -= sq.power2;
+}
+if(sq.health <= 0 || ta.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (sq.health < ta.health){
+  printf("================================\n");
+  printf("||     Winner is TalonFlame   ||\n");
+  printf("================================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Squirtle   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 1){
+printf("You choose : TalonFlame \n");
+talonflame_pokemon();
+printf("==========================================================\n");
+printf("||               (TalonFlame vs Bulbasaur)              ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbulbasaur_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: TalonFlame = %d || Bulbasur = %d ||\n",ta.health,bul.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",bul.health,ta.power1);
+ bul.health -= ta.power1;
+ printf("Bulbasur attack with Sharp Vine \n");
+ printf("::::::: %d - %d \n",ta.health,bul.power4);
+ ta.health -= bul.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Flame Charge \n");
+ printf("////// %d - %d \n",bul.health,ta.power2);
+ bul.health -=  ta.power2;
+
+ printf("Bulbasur attack with Grass Blade \n");
+ printf("::::::: %d - %d \n",ta.health,bul.power1);
+ ta.health -= bul.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Tail Wind \n");
+ printf("////// %d - %d \n",bul.health,ta.power3);
+ bul.health -= ta.power3;
+
+ printf("Bulbasur attack with Blow \n");
+ printf("::::::: %d - %d \n",ta.health,bul.power3);
+ ta.health -= bul.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Steel Wings \n");
+ printf("////// %d - %d \n",bul.health,ta.power4);
+ bul.health -= ta.power4;
+
+ printf("Bulbasur attack with Leaf Attack \n");
+ printf("::::::: %d - %d \n",ta.health,bul.power2);
+ ta.health -= bul.power2;
+}
+if(bul.health <= 0 || ta.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (bul.health < ta.health){
+  printf("==================================\n");
+  printf("||     Winner is TalonFlame     ||\n");
+  printf("==================================\n");
+}
+else {
+printf("======================================\n");
+printf("||        Winner is Bulbasaur       ||\n");
+printf("======================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye then \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////
+if(pokemonchoos == 5 && oppo == 2){
+printf("You choose : TalonFlame \n");
+talonflame_pokemon();
+printf("============================================================\n");
+printf("||                 (Talonflame vs Charchar)               ||\n");
+printf("============================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppcharchar_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("=========================================================\n");
+printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
+printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
+printf("=========================================================\n");
+printf("|| Health :: Beautilfly = %d || Charchar = %d ||\n",be.health,charc.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Morning Sun \n");
+ printf("////// %d - %d \n",charc.health,be.power1);
+ charc.health -= be.power1;
+ printf("Charchar attack with Dragon Roar \n");
+ printf("::::::: %d - %d \n",be.health,charc.power4);
+ be.health -= charc.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Air cutter \n");
+ printf("////// %d - %d \n",charc.health,be.power2);
+ charc.health-=  be.power2;
+
+ printf("Charchar attack with Wings Attack \n");
+ printf("::::::: %d - %d \n",be.health,charc.power1);
+ be.health -= charc.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Silver Wind \n");
+ printf("////// %d - %d \n",charc.health,be.power3);
+ charc.health -= be.power3;
+
+ printf("Charchar attack with Overhead Fire \n");
+ printf("::::::: %d - %d \n",be.health,charc.power3);
+ be.health -= charc.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Whirl Wind \n");
+ printf("////// %d - %d \n",charc.health,be.power4);
+ charc.health -= be.power4;
+
+ printf("Charchar attack with Fire Blast \n");
+ printf("::::::: %d - %d \n",be.health,charc.power2);
+ be.health -= charc.power2;
+}
+if(charc.health <= 0 || be.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (charc.health < be.health){
+  printf("===============================\n");
+  printf("||  Winner is Beautilfly     ||\n");
+  printf("===============================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Charchar   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////End TalonFlame////////////////////
+
 }
 }
 /* Project done by Peter Karki */
