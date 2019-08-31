@@ -10,8 +10,9 @@ int power1,power2,power3,power4,health,health1;
 };
 struct user player;
 /////////////////////////////////////////////////////////s//////////////////////////////////////////////////////////////////
-void gameplay(char name[20],int paesa){
+void gameplay(char name[20],int ester){
 getchar();
+//player.money = paesa + player.money;
 int pokemonchoos,ga,i=0,b = 1,oppo;
 char ok = 'n';
 struct pokemon bul;
@@ -56,6 +57,14 @@ ek.power3 = 70;
 ek.power4 = 40;
 ek.health = 220;
 ek.health1 = 220;
+struct pokemon pk;
+pk.power1 = 10;
+pk.power2 = 20;
+pk.power3 = 30;
+pk.power4 = 40;
+pk.health = 3000;
+
+
 while( ok == 'n'){
 printf("========================================================\n");
 printf("||              Choose your pokemon                   ||\n");
@@ -64,6 +73,12 @@ printf("||  1:: bulbasaur(defence)      2:: charchar(attack)  ||\n");
 printf("||  3:: Squirtle(attack)        4:: beautifly(attack) ||\n");
 printf("||  5:: talonflame(defence)     6:: ekans(defence)    ||\n");
 printf("========================================================\n");
+if(ester == 2){
+printf("========================================================\n");
+printf("||         7 :: Pikachu(God mod / Test mod)           ||\n");
+printf("========================================================\n");
+
+}
 printf("Choose your pokemon : ");
 scanf("%d",&pokemonchoos);
 printf("Choose your opponent : ");
@@ -84,7 +99,7 @@ system("clear");
 oppekans_pokemon();
 //bulbasaur_pokemon();
 printf("You attack first !! \n");
-
+//player.money += 500;
 while(i == 0){
 printf("======================================================\n");
 printf("|| 1 :: GrassBlade               2 :: Leaf attack   ||\n");
@@ -103,7 +118,1119 @@ if(ga == 1){
  printf("::::::: %d - %d \n",bul.health,ek.power4);
  bul.health = bul.health - ek.power4;
 }
+if(ga == 2){if(pokemonchoos == 6 && oppo == 6){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                   (Ekans vs Ekans)                   ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppekans_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || ekans = %d ||\n",ek.health,ek.health1);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",ek.health1, ek.power1);
+ ek.health1 -= ek.power1;
+
+ printf("EKans attack with Warp Gas \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power4);
+ ek.health -= ek.power4;
+}
 if(ga == 2){
+
+ printf("You attack with Slam Leer\n");
+ printf("////// %d - %d \n",ek.health1,ek.power2);
+ ek.health1 -= ek.power2;
+
+ printf("EKans attack with Acid glare \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power1);
+ ek.health -= ek.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting\n");
+ printf("////// %d - %d \n",ek.health1,ek.power3);
+ ek.health1 -= ek.power3;
+
+ printf("EKans attack with Poison Stings \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power3);
+ ek.health -= ek.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ek.health1,ek.power4);
+ ek.health1 -= ek.power4;
+
+ printf("EKans attack with Slam leer \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power2);
+ ek.health -= ek.power2;
+}
+if(ek.health1 <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ek.health1 < ek.health){
+  printf("================================\n");
+  printf("||     Winner is Ekans(You)   ||\n");
+  printf("================================\n");
+}
+else {
+printf("================================\n");
+printf("||    Winner is Ekans(Not you)||\n");
+printf("================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+if(pokemonchoos == 6 && oppo == 5){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("======================================================\n");
+printf("||                 Ekans vs Talonflame              ||\n");
+printf("======================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+opptalonflame_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Talonflame = %d ||\n",ek.health,ta.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",ta.health,ek.power1);
+ ta.health -= ek.power1;
+ printf("talonflame attack with Steel Wings \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power4);
+ ek.health -= ta.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",ta.health,ek.power2);
+ ta.health -=  ek.power2;
+
+ printf("talonflame attack with Razor Wind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power1);
+ ek.health -= ta.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",ta.health,ek.power3);
+ ta.health -= ek.power3;
+
+ printf("talonflame attack with TailWind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power3);
+ ek.health -= ta.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ta.health,ek.power4);
+ ta.health -= ek.power4;
+
+ printf("talonflame attack with Flame Charge \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power2);
+ ek.health -= ta.power2;
+}
+if(ta.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ta.health < ek.health){
+  printf("================================\n");
+  printf("||       Winner is Ekans      ||\n");
+  printf("================================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Talonflame   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 4){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Beautilfly)                ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbeautifly_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Beautilfly = %d ||\n",ek.health,be.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",be.health,ek.power1);
+ be.health -= ek.power1;
+ printf("Beautilfly attack with Whirlwind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power4);
+ ek.health -= be.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam leer \n");
+ printf("////// %d - %d \n",be.health,ek.power2);
+ be.health -=  ek.power2;
+
+ printf("Beautilfly attack with Morning Sun \n");
+ printf("::::::: %d - %d \n",ek.health,be.power1);
+ ek.health -= be.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",be.health,ek.power3);
+ be.health -= ek.power3;
+
+ printf("Beautilfly attack with Silver wind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power3);
+ ek.health -= be.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",be.health,ek.power4);
+ be.health -= ek.power4;
+
+ printf("Beautilfly attack with Air cutter \n");
+ printf("::::::: %d - %d \n",ek.health,be.power2);
+ ek.health -= be.power2;
+}
+if(be.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (be.health < ek.health){
+  printf("=============================\n");
+  printf("||      Winner is Ekans    ||\n");
+  printf("=============================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Beautilfly   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////////////
+/////////////////////////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 3){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                  (Ekans vs Squirtle)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppSquirtle();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Squirtle = %d ||\n",ek.health,sq.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",sq.health,ek.power1);
+ sq.health -= ek.power1;
+ printf("Squirtle attack with Water blade \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power4);
+ ek.health -= sq.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",sq.health,ek.power2);
+ sq.health -=  ek.power2;
+
+ printf("Squirtle attack with Water Gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power1);
+ ek.health -= sq.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison String \n");
+ printf("////// %d - %d \n",sq.health,ek.power3);
+ sq.health -= ek.power3;
+
+ printf("Squirtle attack with Bubble gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power3);
+ ek.health -= sq.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",sq.health1,ek.power4);
+ sq.health -= ek.power4;
+
+ printf("Squirtle attack with Tail whip \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power2);
+ ek.health -= sq.power2;
+}
+if(sq.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (sq.health < ek.health){
+  printf("================================\n");
+  printf("||        Winner is Ekans     ||\n");
+  printf("================================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Squirtle   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 1){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Bulbasaur)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbulbasaur_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Bulbasur = %d ||\n",ek.health,bul.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",bul.health,ek.power1);
+ bul.health -= ek.power1;
+ printf("Bulbasur attack with Sharp Vine \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power4);
+ ek.health -= bul.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",bul.health,ek.power2);
+ bul.health -=  ek.power2;
+
+ printf("Bulbasur attack with Grass Blade \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power1);
+ ek.health -= bul.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",bul.health,ek.power3);
+ bul.health -= ek.power3;
+
+ printf("Bulbasur attack with Blow \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power3);
+ ek.health -= bul.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",bul.health,ek.power4);
+ bul.health -= ek.power4;
+
+ printf("Bulbasur attack with Leaf Attack \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power2);
+ ek.health -= bul.power2;
+}
+if(bul.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (bul.health < ek.health){
+  printf("==================================\n");
+  printf("||        Winner is Ekans       ||\n");
+  printf("==================================\n");
+}
+else {
+printf("======================================\n");
+printf("||        Winner is Bulbasaur       ||\n");
+printf("======================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye then \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////
+if(pokemonchoos == 6 && oppo == 2){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("============================================================\n");
+printf("||                 (Ekans vs Charchar)                    ||\n");
+printf("============================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppcharchar_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Charchar = %d ||\n",ek.health,charc.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",charc.health,ek.power1);
+ charc.health -= ek.power1;
+ printf("Charchar attack with Dragon Roar \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power4);
+ ek.health -= charc.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",charc.health,ek.power2);
+ charc.health-=  ek.power2;
+
+ printf("Charchar attack with Wings Attack \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power1);
+ ek.health -= charc.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",charc.health,ek.power3);
+ charc.health -= ek.power3;
+
+ printf("Charchar attack with Overhead Fire \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power3);
+ ek.health -= charc.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",charc.health,ek.power4);
+ charc.health -= ek.power4;
+
+ printf("Charchar attack with Fire Blast \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power2);
+ ek.health -= charc.power2;
+}
+if(charc.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+if(pokemonchoos == 6 && oppo == 6){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                   (Ekans vs Ekans)                   ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppekans_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || ekans = %d ||\n",ek.health,ek.health1);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",ek.health1, ek.power1);
+ ek.health1 -= ek.power1;
+
+ printf("EKans attack with Warp Gas \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power4);
+ ek.health -= ek.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer\n");
+ printf("////// %d - %d \n",ek.health1,ek.power2);
+ ek.health1 -= ek.power2;
+
+ printf("EKans attack with Acid glare \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power1);
+ ek.health -= ek.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting\n");
+ printf("////// %d - %d \n",ek.health1,ek.power3);
+ ek.health1 -= ek.power3;
+
+ printf("EKans attack with Poison Stings \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power3);
+ ek.health -= ek.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ek.health1,ek.power4);
+ ek.health1 -= ek.power4;
+
+ printf("EKans attack with Slam leer \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power2);
+ ek.health -= ek.power2;
+}
+if(ek.health1 <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ek.health1 < ek.health){
+  printf("================================\n");
+  printf("||     Winner is Ekans(You)   ||\n");
+  printf("================================\n");
+}
+else {
+printf("================================\n");
+printf("||    Winner is Ekans(Not you)||\n");
+printf("================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+if(pokemonchoos == 6 && oppo == 5){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("======================================================\n");
+printf("||                 Ekans vs Talonflame              ||\n");
+printf("======================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+opptalonflame_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Talonflame = %d ||\n",ek.health,ta.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",ta.health,ek.power1);
+ ta.health -= ek.power1;
+ printf("talonflame attack with Steel Wings \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power4);
+ ek.health -= ta.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",ta.health,ek.power2);
+ ta.health -=  ek.power2;
+
+ printf("talonflame attack with Razor Wind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power1);
+ ek.health -= ta.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",ta.health,ek.power3);
+ ta.health -= ek.power3;
+
+ printf("talonflame attack with TailWind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power3);
+ ek.health -= ta.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ta.health,ek.power4);
+ ta.health -= ek.power4;
+
+ printf("talonflame attack with Flame Charge \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power2);
+ ek.health -= ta.power2;
+}
+if(ta.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ta.health < ek.health){
+  printf("================================\n");
+  printf("||       Winner is Ekans      ||\n");
+  printf("================================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Talonflame   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 4){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Beautilfly)                ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbeautifly_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Beautilfly = %d ||\n",ek.health,be.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",be.health,ek.power1);
+ be.health -= ek.power1;
+ printf("Beautilfly attack with Whirlwind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power4);
+ ek.health -= be.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam leer \n");
+ printf("////// %d - %d \n",be.health,ek.power2);
+ be.health -=  ek.power2;
+
+ printf("Beautilfly attack with Morning Sun \n");
+ printf("::::::: %d - %d \n",ek.health,be.power1);
+ ek.health -= be.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",be.health,ek.power3);
+ be.health -= ek.power3;
+
+ printf("Beautilfly attack with Silver wind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power3);
+ ek.health -= be.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",be.health,ek.power4);
+ be.health -= ek.power4;
+
+ printf("Beautilfly attack with Air cutter \n");
+ printf("::::::: %d - %d \n",ek.health,be.power2);
+ ek.health -= be.power2;
+}
+if(be.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (be.health < ek.health){
+  printf("=============================\n");
+  printf("||      Winner is Ekans    ||\n");
+  printf("=============================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Beautilfly   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////////////
+/////////////////////////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 3){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                  (Ekans vs Squirtle)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppSquirtle();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Squirtle = %d ||\n",ek.health,sq.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",sq.health,ek.power1);
+ sq.health -= ek.power1;
+ printf("Squirtle attack with Water blade \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power4);
+ ek.health -= sq.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",sq.health,ek.power2);
+ sq.health -=  ek.power2;
+
+ printf("Squirtle attack with Water Gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power1);
+ ek.health -= sq.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison String \n");
+ printf("////// %d - %d \n",sq.health,ek.power3);
+ sq.health -= ek.power3;
+
+ printf("Squirtle attack with Bubble gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power3);
+ ek.health -= sq.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",sq.health1,ek.power4);
+ sq.health -= ek.power4;
+
+ printf("Squirtle attack with Tail whip \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power2);
+ ek.health -= sq.power2;
+}
+if(sq.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (sq.health < ek.health){
+  printf("================================\n");
+  printf("||        Winner is Ekans     ||\n");
+  printf("================================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Squirtle   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 1){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Bulbasaur)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbulbasaur_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Bulbasur = %d ||\n",ek.health,bul.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",bul.health,ek.power1);
+ bul.health -= ek.power1;
+ printf("Bulbasur attack with Sharp Vine \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power4);
+ ek.health -= bul.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",bul.health,ek.power2);
+ bul.health -=  ek.power2;
+
+ printf("Bulbasur attack with Grass Blade \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power1);
+ ek.health -= bul.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",bul.health,ek.power3);
+ bul.health -= ek.power3;
+
+ printf("Bulbasur attack with Blow \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power3);
+ ek.health -= bul.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",bul.health,ek.power4);
+ bul.health -= ek.power4;
+
+ printf("Bulbasur attack with Leaf Attack \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power2);
+ ek.health -= bul.power2;
+}
+if(bul.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (bul.health < ek.health){
+  printf("==================================\n");
+  printf("||        Winner is Ekans       ||\n");
+  printf("==================================\n");
+}
+else {
+printf("======================================\n");
+printf("||        Winner is Bulbasaur       ||\n");
+printf("======================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye then \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////
+if(pokemonchoos == 6 && oppo == 2){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("============================================================\n");
+printf("||                 (Ekans vs Charchar)                    ||\n");
+printf("============================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppcharchar_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Charchar = %d ||\n",ek.health,charc.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",charc.health,ek.power1);
+ charc.health -= ek.power1;
+ printf("Charchar attack with Dragon Roar \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power4);
+ ek.health -= charc.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",charc.health,ek.power2);
+ charc.health-=  ek.power2;
+
+ printf("Charchar attack with Wings Attack \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power1);
+ ek.health -= charc.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",charc.health,ek.power3);
+ charc.health -= ek.power3;
+
+ printf("Charchar attack with Overhead Fire \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power3);
+ ek.health -= charc.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",charc.health,ek.power4);
+ charc.health -= ek.power4;
+
+ printf("Charchar attack with Fire Blast \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power2);
+ ek.health -= charc.power2;
+}
+if(charc.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (charc.health < ek.health){
+  printf("===============================\n");
+  printf("||       Winner is Ekans     ||\n");
+  printf("===============================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Charchar   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+}
+if (charc.health < ek.health){
+  printf("===============================\n");
+  printf("||       Winner is Ekans     ||\n");
+  printf("===============================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Charchar   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
 
  printf("You attack with leaf attack \n");
  printf("////// %d - %d \n",ek.health,bul.power2);
@@ -2457,7 +3584,7 @@ if(ga == 4){
  printf("::::::: %d - %d \n",ta.health,ta.power2);
  ta.health -= ta.power2;
 }
-if(ta.health <= 0 || be.health <= 0){
+if(ta.health1 <= 0 || ta.health <= 0){
   i = 1;
 }
 else{
@@ -2787,50 +3914,50 @@ printf("=========================================================\n");
 printf("|| 1 :: Razor Wind               2 :: Flame Charge     ||\n");
 printf("|| 3 :: tailwind                 4 :: Steel wings      ||\n");
 printf("=========================================================\n");
-printf("|| Health :: Beautilfly = %d || Charchar = %d ||\n",be.health,charc.health);
+printf("|| Health :: TalonFlame = %d || Charchar = %d ||\n",ta.health,charc.health);
 printf("======================================================\n");
 printf("Choose your attack : \n");
 scanf("%d",&ga);
 
 if(ga == 1){
- printf("You attack with Morning Sun \n");
- printf("////// %d - %d \n",charc.health,be.power1);
- charc.health -= be.power1;
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",charc.health,ta.power1);
+ charc.health -= ta.power1;
  printf("Charchar attack with Dragon Roar \n");
- printf("::::::: %d - %d \n",be.health,charc.power4);
- be.health -= charc.power4;
+ printf("::::::: %d - %d \n",ta.health,charc.power4);
+ ta.health -= charc.power4;
 }
 if(ga == 2){
 
- printf("You attack with Air cutter \n");
- printf("////// %d - %d \n",charc.health,be.power2);
- charc.health-=  be.power2;
+ printf("You attack with Flame Charge \n");
+ printf("////// %d - %d \n",charc.health,ta.power2);
+ charc.health-=  ta.power2;
 
  printf("Charchar attack with Wings Attack \n");
- printf("::::::: %d - %d \n",be.health,charc.power1);
- be.health -= charc.power1;
+ printf("::::::: %d - %d \n",ta.health,charc.power1);
+ ta.health -= charc.power1;
 }
 if(ga == 3){
 
- printf("You attack with Silver Wind \n");
- printf("////// %d - %d \n",charc.health,be.power3);
- charc.health -= be.power3;
+ printf("You attack with Tail Wind \n");
+ printf("////// %d - %d \n",charc.health,ta.power3);
+ charc.health -= ta.power3;
 
  printf("Charchar attack with Overhead Fire \n");
- printf("::::::: %d - %d \n",be.health,charc.power3);
- be.health -= charc.power3;
+ printf("::::::: %d - %d \n",ta.health,charc.power3);
+ ta.health -= charc.power3;
 }
 if(ga == 4){
 
- printf("You attack with Whirl Wind \n");
- printf("////// %d - %d \n",charc.health,be.power4);
- charc.health -= be.power4;
+ printf("You attack with Steel wings \n");
+ printf("////// %d - %d \n",charc.health,ta.power4);
+ charc.health -= ta.power4;
 
  printf("Charchar attack with Fire Blast \n");
- printf("::::::: %d - %d \n",be.health,charc.power2);
- be.health -= charc.power2;
+ printf("::::::: %d - %d \n",ta.health,charc.power2);
+ ta.health -= charc.power2;
 }
-if(charc.health <= 0 || be.health <= 0){
+if(charc.health <= 0 || ta.health <= 0){
   i = 1;
 }
 else{
@@ -2839,9 +3966,9 @@ else{
 
 
 }
-if (charc.health < be.health){
+if (charc.health < ta.health){
   printf("===============================\n");
-  printf("||  Winner is Beautilfly     ||\n");
+  printf("||  Winner is TalonFlame     ||\n");
   printf("===============================\n");
 }
 else {
@@ -2860,6 +3987,629 @@ else{
 
 }
 ///////////////////////End TalonFlame////////////////////
+//////////////////////Ekans Start///////////////////////
+if(pokemonchoos == 6 && oppo == 6){
+printf("You choose : Pikachu \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                   (Ekans vs Ekans)                   ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppekans_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || ekans = %d ||\n",ek.health,ek.health1);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",ek.health1, ek.power1);
+ ek.health1 -= ek.power1;
+
+ printf("EKans attack with Warp Gas \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power4);
+ ek.health -= ek.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer\n");
+ printf("////// %d - %d \n",ek.health1,ek.power2);
+ ek.health1 -= ek.power2;
+
+ printf("EKans attack with Acid glare \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power1);
+ ek.health -= ek.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting\n");
+ printf("////// %d - %d \n",ek.health1,ek.power3);
+ ek.health1 -= ek.power3;
+
+ printf("EKans attack with Poison Stings \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power3);
+ ek.health -= ek.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ek.health1,ek.power4);
+ ek.health1 -= ek.power4;
+
+ printf("EKans attack with Slam leer \n");
+ printf("::::::: %d - %d \n",ek.health,ek.power2);
+ ek.health -= ek.power2;
+}
+if(ek.health1 <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ek.health1 < ek.health){
+  printf("================================\n");
+  printf("||     Winner is Ekans(You)   ||\n");
+  printf("================================\n");
+}
+else {
+printf("================================\n");
+printf("||    Winner is Ekans(Not you)||\n");
+printf("================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+if(pokemonchoos == 6 && oppo == 5){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("======================================================\n");
+printf("||                 Ekans vs Talonflame              ||\n");
+printf("======================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+opptalonflame_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Talonflame = %d ||\n",ek.health,ta.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+if(ga == 1){
+ printf("You attack with Razor Wind \n");
+ printf("////// %d - %d \n",ta.health,ek.power1);
+ ta.health -= ek.power1;
+ printf("talonflame attack with Steel Wings \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power4);
+ ek.health -= ta.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",ta.health,ek.power2);
+ ta.health -=  ek.power2;
+
+ printf("talonflame attack with Razor Wind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power1);
+ ek.health -= ta.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",ta.health,ek.power3);
+ ta.health -= ek.power3;
+
+ printf("talonflame attack with TailWind \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power3);
+ ek.health -= ta.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",ta.health,ek.power4);
+ ta.health -= ek.power4;
+
+ printf("talonflame attack with Flame Charge \n");
+ printf("::::::: %d - %d \n",ek.health,ta.power2);
+ ek.health -= ta.power2;
+}
+if(ta.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (ta.health < ek.health){
+  printf("================================\n");
+  printf("||       Winner is Ekans      ||\n");
+  printf("================================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Talonflame   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 4){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Beautilfly)                ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbeautifly_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Beautilfly = %d ||\n",ek.health,be.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",be.health,ek.power1);
+ be.health -= ek.power1;
+ printf("Beautilfly attack with Whirlwind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power4);
+ ek.health -= be.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam leer \n");
+ printf("////// %d - %d \n",be.health,ek.power2);
+ be.health -=  ek.power2;
+
+ printf("Beautilfly attack with Morning Sun \n");
+ printf("::::::: %d - %d \n",ek.health,be.power1);
+ ek.health -= be.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",be.health,ek.power3);
+ be.health -= ek.power3;
+
+ printf("Beautilfly attack with Silver wind \n");
+ printf("::::::: %d - %d \n",ek.health,be.power3);
+ ek.health -= be.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",be.health,ek.power4);
+ be.health -= ek.power4;
+
+ printf("Beautilfly attack with Air cutter \n");
+ printf("::::::: %d - %d \n",ek.health,be.power2);
+ ek.health -= be.power2;
+}
+if(be.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (be.health < ek.health){
+  printf("=============================\n");
+  printf("||      Winner is Ekans    ||\n");
+  printf("=============================\n");
+}
+else {
+printf("=============================\n");
+printf("||  Winner is Beautilfly   ||\n");
+printf("=============================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+///////////////////////////////
+/////////////////////////////////////////////////////////////////
+if(pokemonchoos == 5 && oppo == 3){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                  (Ekans vs Squirtle)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppSquirtle();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Squirtle = %d ||\n",ek.health,sq.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",sq.health,ek.power1);
+ sq.health -= ek.power1;
+ printf("Squirtle attack with Water blade \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power4);
+ ek.health -= sq.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",sq.health,ek.power2);
+ sq.health -=  ek.power2;
+
+ printf("Squirtle attack with Water Gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power1);
+ ek.health -= sq.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison String \n");
+ printf("////// %d - %d \n",sq.health,ek.power3);
+ sq.health -= ek.power3;
+
+ printf("Squirtle attack with Bubble gun \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power3);
+ ek.health -= sq.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",sq.health1,ek.power4);
+ sq.health -= ek.power4;
+
+ printf("Squirtle attack with Tail whip \n");
+ printf("::::::: %d - %d \n",ek.health,sq.power2);
+ ek.health -= sq.power2;
+}
+if(sq.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (sq.health < ek.health){
+  printf("================================\n");
+  printf("||        Winner is Ekans     ||\n");
+  printf("================================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Squirtle   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////////////////////
+if(pokemonchoos == 6 && oppo == 1){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("==========================================================\n");
+printf("||                 (Ekans vs Bulbasaur)                 ||\n");
+printf("==========================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppbulbasaur_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Bulbasur = %d ||\n",ek.health,bul.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",bul.health,ek.power1);
+ bul.health -= ek.power1;
+ printf("Bulbasur attack with Sharp Vine \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power4);
+ ek.health -= bul.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",bul.health,ek.power2);
+ bul.health -=  ek.power2;
+
+ printf("Bulbasur attack with Grass Blade \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power1);
+ ek.health -= bul.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",bul.health,ek.power3);
+ bul.health -= ek.power3;
+
+ printf("Bulbasur attack with Blow \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power3);
+ ek.health -= bul.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",bul.health,ek.power4);
+ bul.health -= ek.power4;
+
+ printf("Bulbasur attack with Leaf Attack \n");
+ printf("::::::: %d - %d \n",ek.health,bul.power2);
+ ek.health -= bul.power2;
+}
+if(bul.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (bul.health < ek.health){
+  printf("==================================\n");
+  printf("||        Winner is Ekans       ||\n");
+  printf("==================================\n");
+}
+else {
+printf("======================================\n");
+printf("||        Winner is Bulbasaur       ||\n");
+printf("======================================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye then \n");
+ system("exit");
+
+}
+
+}
+//////////////////////////////
+if(pokemonchoos == 6 && oppo == 2){
+printf("You choose : Ekans \n");
+ekans_pokemon();
+printf("============================================================\n");
+printf("||                 (Ekans vs Charchar)                    ||\n");
+printf("============================================================\n");
+getchar();
+printf("Are you ready [y/n] : ");
+scanf("%c",&ok);
+if(ok == 'y'){
+system("clear");
+oppcharchar_pokemon();
+//bulbasaur_pokemon();
+printf("You attack first !! \n");
+
+while(i == 0){
+printf("========================================================\n");
+printf("|| 1 :: Acid Glare                2 :: Slam Leer      ||\n");
+printf("|| 3 :: Poison Sting              4 :: Wrap Gas       ||\n");
+printf("========================================================\n");
+printf("|| Health :: Ekans = %d || Charchar = %d ||\n",ek.health,charc.health);
+printf("======================================================\n");
+printf("Choose your attack : \n");
+scanf("%d",&ga);
+
+if(ga == 1){
+ printf("You attack with Acid Glare \n");
+ printf("////// %d - %d \n",charc.health,ek.power1);
+ charc.health -= ek.power1;
+ printf("Charchar attack with Dragon Roar \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power4);
+ ek.health -= charc.power4;
+}
+if(ga == 2){
+
+ printf("You attack with Slam Leer \n");
+ printf("////// %d - %d \n",charc.health,ek.power2);
+ charc.health-=  ek.power2;
+
+ printf("Charchar attack with Wings Attack \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power1);
+ ek.health -= charc.power1;
+}
+if(ga == 3){
+
+ printf("You attack with Poison Sting \n");
+ printf("////// %d - %d \n",charc.health,ek.power3);
+ charc.health -= ek.power3;
+
+ printf("Charchar attack with Overhead Fire \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power3);
+ ek.health -= charc.power3;
+}
+if(ga == 4){
+
+ printf("You attack with Wrap Gas \n");
+ printf("////// %d - %d \n",charc.health,ek.power4);
+ charc.health -= ek.power4;
+
+ printf("Charchar attack with Fire Blast \n");
+ printf("::::::: %d - %d \n",ek.health,charc.power2);
+ ek.health -= charc.power2;
+}
+if(charc.health <= 0 || ek.health <= 0){
+  i = 1;
+}
+else{
+ i = 0;
+}
+
+
+}
+if (charc.health < ek.health){
+  printf("===============================\n");
+  printf("||       Winner is Ekans     ||\n");
+  printf("===============================\n");
+}
+else {
+printf("===========================\n");
+printf("||  Winner is Charchar   ||\n");
+printf("===========================\n");
+
+}
+}
+
+else{
+ printf("OK thats rude bye bye the \n");
+ system("exit");
+
+}
+
+}
+/////////////////////////////////////////////////////////////
+if(pokemonchoos == 7777 || oppo == 1){
+  int test;
+  printf("Pikachu / TEsting mode\n");
+  pikachu();
+  printf("Move :\n");
+  printf("1 (10) :\n");
+  printf("2 (20):\n");
+  printf("3 (30):\n");
+  printf("4 (40):\n");
+  getchar();
+  scanf("%d",&test);
+  if(test == 1){
+     printf("bulbasaur test = %d - %d = %d\n",bul.health,pk.power1,bul.health - pk.power1);
+     printf("charchar test = %d - %d = %d\n",charc.health,pk.power1,charc.health - pk.power1);
+     printf("Squirtle test = %d - %d = %d\n",sq.health,pk.power1,sq.health - pk.power1);
+     printf("Beautifly test = %d - %d = %d\n",be.health,pk.power1,be.health - pk.power1);
+     printf("Talonflame test = %d - %d = %d\n",ta.health,pk.power1,ta.health - pk.power1);
+     printf("Ekans test = %d - %d = %d\n",ek.health,pk.power1,ek.health - pk.power1);
+}
+if(test == 2){
+     printf("bulbasaur test = %d - %d = %d\n",bul.health,pk.power2,bul.health - pk.power2);
+     printf("charchar test = %d - %d = %d\n",charc.health,pk.power2,charc.health - pk.power2);
+     printf("Squirtle test = %d - %d = %d\n",sq.health,pk.power2,sq.health - pk.power2);
+     printf("Beautifly test = %d - %d = %d\n",be.health,pk.power2,be.health - pk.power2);
+     printf("Talonflame test = %d - %d = %d\n",ta.health,pk.power2,ta.health - pk.power2);
+     printf("Ekans test = %d - %d = %d\n",ek.health,pk.power2,ek.health - pk.power2);
+}
+if(test == 3){
+     printf("bulbasaur test = %d - %d = %d\n",bul.health,pk.power3,bul.health - pk.power3);
+     printf("charchar test = %d - %d = %d\n",charc.health,pk.power3,charc.health - pk.power3);
+     printf("Squirtle test = %d - %d = %d\n",sq.health,pk.power3,sq.health - pk.power3);
+     printf("Beautifly test = %d - %d = %d\n",be.health,pk.power3,be.health - pk.power3);
+     printf("Talonflame test = %d - %d = %d\n",ta.health,pk.power3,ta.health - pk.power3);
+     printf("Ekans test = %d - %d = %d\n",ek.health,pk.power3,ek.health - pk.power3);
+}
+if(test == 4){
+     printf("bulbasaur test = %d - %d = %d\n",bul.health,pk.power4,bul.health - pk.power4);
+     printf("charchar test = %d - %d = %d\n",charc.health,pk.power4,charc.health - pk.power4);
+     printf("Squirtle test = %d - %d = %d\n",sq.health,pk.power4,sq.health - pk.power4);
+     printf("Beautifly test = %d - %d = %d\n",be.health,pk.power4,be.health - pk.power4);
+     printf("Talonflame test = %d - %d = %d\n",ta.health,pk.power4,ta.health - pk.power4);
+     printf("Ekans test = %d - %d = %d\n",ek.health,pk.power4,ek.health - pk.power4);
+}
+
+}
+
+////////////////////////////////////////////////////////////
+else {
+  char here;
+printf("+++++++++++++++++++++++++++++++++++++++\n");
+printf("++  Select the pokemon no : you see  ++\n");
+printf("+++++++++++++++++++++++++++++++++++++++\n");
+getchar();
+printf("Do you want to do it again [y/n] :");
+scanf("%c",&here);
+if(here == 'y'){
+  ok = 'n';
+}
+else{
+  ok = 'y';
+}
+}
+////////////////////////////End of Ekans///////////////////////////////////////
+////////////////////////////Start Oikchu//////////////////////////////////////
 
 }
 }
@@ -2977,7 +4727,7 @@ else{
                 }
 
 
-            gameplay(player.name,player.money);
+            gameplay(player.name,esteregg);
             }
            else if (game == 2){
              FILE *ptr;
@@ -3236,7 +4986,7 @@ else{
             printf("||   time to enter here thats why now you unlock Pikchu.  ||\n");
             printf("|| + Pikachu Unlock                                       ||\n");
             printf("============================================================\n");
-            esteregg = 1;
+            esteregg += 1;
             pikachu();
              printf("go to main menu [y/n] :");
             getchar();
